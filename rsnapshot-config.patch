@@ -1,0 +1,52 @@
+diff -aurN rsnapshot-1.3.1.orig/rsnapshot.conf.default.in rsnapshot-1.3.1/rsnapshot.conf.default.in
+--- rsnapshot-1.3.1.orig/rsnapshot.conf.default.in	2013-09-02 17:40:03.219659510 +0200
++++ rsnapshot-1.3.1/rsnapshot.conf.default.in	2013-09-02 17:41:37.708239553 +0200
+@@ -41,7 +41,7 @@
+ #
+ # See the README file or the man page for more details.
+ #
+-#@CMD_CP@
++@CMD_CP@
+ 
+ # uncomment this to use the rm program instead of the built-in perl routine.
+ #
+@@ -54,7 +54,7 @@
+ 
+ # Uncomment this to enable remote ssh backups over rsync.
+ #
+-#@CMD_SSH@
++@CMD_SSH@
+ 
+ # Comment this out to disable syslog support.
+ #
+@@ -64,11 +64,11 @@
+ # If you have an older version of "du", you may also want to check the
+ # "du_args" parameter below.
+ #
+-#@CMD_DU@
++@CMD_DU@
+ 
+ # Uncomment this to specify the path to rsnapshot-diff.
+ #
+-#cmd_rsnapshot_diff	/usr/local/bin/rsnapshot-diff
++cmd_rsnapshot_diff	/usr/bin/rsnapshot-diff
+ 
+ # Specify the path to a script (and any optional arguments) to run right
+ # before rsnapshot syncs files
+@@ -113,14 +113,14 @@
+ # If you enable this, data will be written to the file you specify. The
+ # amount of data written is controlled by the "loglevel" parameter.
+ #
+-#logfile	/var/log/rsnapshot
++logfile		/var/log/rsnapshot.log
+ 
+ # If enabled, rsnapshot will write a lockfile to prevent two instances
+ # from running simultaneously (and messing up the snapshot_root).
+ # If you enable this, make sure the lockfile directory is not world
+ # writable. Otherwise anyone can prevent the program from running.
+ #
+-lockfile	/var/run/rsnapshot.pid
++lockfile	/run/rsnapshot.pid
+ 
+ # Default rsync args. All rsync commands have at least these options set.
+ #
